@@ -1,29 +1,38 @@
 <html>
 <title>Autor</title>
 <script type="text/javascript"src="scripts.js">
+function queIdadeTeño (id){
+    var dt_msecs = new Date();
+    if(dt_msecs.getMonth>=10){
+        if(dt_msecs.getDay>=20)
+            document.getElementById(id).innerHTML=dt_msecs.getFullYear-1995;
+    }
+    else
+        document.getElementById(id).innerHTML=dt_msecs.getFullYear-1996;
+}
 </script>
 <body>
   <a href="/castellano">Castellano</a>
   <a href="/english">English</a>
   <a href="/curioso">Galego</a>
   <br>
-  <p>Boas, ch�mome Javier Castro V�zquez, te�o></p><a id="idade"onLoad="queIdadeTeño(idade)"></a><p> anos, nac�n no
-      ano 1995 d.C. en Aranga, son galego. Isto � o que me define:</p>
+  <p>Boas, chámome Javier Castro Vázquez, teño></p>
+  <a id="idade"onLoad="queIdadeTeño(idade)"></a>
+  <p> anos, nacín no
+      ano 1995 d.C. en Aranga, son galego. Isto é o que me define:</p>
       
-      <p><u>Filosof�a:</u> Estou todo o dia pensando, se ben non sempre
-      en cuesti�ns coma o sentido das cousas, f�goo tam�n e chego a conclusi�ns, sobre
+      <p><u>Filosofía:</u> Estou todo o dia pensando, se ben non sempre
+      en cuestións coma o sentido das cousas, fágoo tamén e chego a conclusións, sobre
       todo mentres me ducho, que poden ser interesantes<u> <o:p></o:p></u></p>
       
-      <p><u>Inform�tica: </u>Estiven 3 anos e un pouco na FIC (facultade
-      de inform�tica de Coru�a), g�stame a automatizaci�n e darlle ordes a unha m�quina
+      <p><u>Informática: </u>Estiven 3 anos e un pouco na FIC (facultade
+      de informática de Coruña), gústame a automatización e darlle ordes a unha máquina
       para facer cousas</p>
       
-      <p><u>Resto: </u>G�stame a electr�nica, f�sica, mec�nica, matem�ticas(non
-      son moi bo), neurociencia, biolox�a, g�stame o co�ecemento</p>
+      <p><u>Resto: </u>Gústame a electrónica, física, mecánica, matemáticas(non
+      son moi bo), neurociencia, bioloxía, gústame o coñecemento</p>
       
-      <p><u>Crenzas: </u>Son Cristi�n, non son un bo pero son</p>
-      
-      <p><o:p>&nbsp;</o:p></p>
+      <p><u>Crenzas: </u>Son Cristián, non son un bo pero son</p>
 </body>
 
 </html>
