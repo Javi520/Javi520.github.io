@@ -1,9 +1,9 @@
-function queIdadeTeño (id){
+window.onload=function fun_idade (){
     var dt_msecs = new Date();
     if(dt_msecs.getMonth>=10){
         if(dt_msecs.getDay>=20)
-            document.getElementById(id).innerHTML=dt_msecs.getFullYear-1995;
+            document.getElementById("idade").innerHTML=(dt_msecs.getFullYear()-1995);
     }
     else
-        document.getElementById(id).innerHTML=dt_msecs.getFullYear-1996;
+        document.getElementById("idade").innerHTML=(dt_msecs.getFullYear()-1996);
 }
