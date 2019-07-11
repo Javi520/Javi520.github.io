@@ -3,7 +3,7 @@
 <body>
     <canvas id="the-canvas" style="border:1px  solid black"></canvas>
     <script type="text/javascript" src="PDF_VISOR/build/pdf.js"></script>
-    
+
     <script id="script">
         //
         // If absolute URL from the remote server is provided, configure the CORS
@@ -43,14 +43,6 @@
                 page.render(renderContext);
             });
         });
-    </script>
-
-    <hr>
-    <h2>JavaScript code:</h2>
-    <pre id="code"></pre>
-    <script>
-        document.getElementById('code').textContent =
-            document.getElementById('script').text;
     </script>
 </body>
 
