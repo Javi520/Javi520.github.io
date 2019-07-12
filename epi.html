@@ -18,32 +18,36 @@
         //
         // Asynchronous download PDF
         //
-        var loadingTask = pdfjsLib.getDocument(url);
-        loadingTask.promise.then(function (pdf) {
-            //
-            // Fetch the first page
-            //
-            pdf.getPage(1).then(function (page) {
-                var scale = 1.5;
-                var viewport = page.getViewport({ scale: scale, });
+        function loadPDF(url_escoger){
+            url = url_escoger;
+            var loadingTask = pdfjsLib.getDocument(url);
+            loadingTask.promise.then(function (pdf) {
                 //
-                // Prepare canvas using PDF page dimensions
+                // Fetch the first page
                 //
-                var canvas = document.getElementById('the-canvas');
-                var context = canvas.getContext('2d');
-                canvas.height = viewport.height;
-                canvas.width = viewport.width;
-                //
-                // Render PDF page into canvas context
-                //
-                var renderContext = {
-                    canvasContext: context,
-                    viewport: viewport,
-                };
-                page.render(renderContext);
+                pdf.getPage(1).then(function (page) {
+                    var scale = 1.5;
+                    var viewport = page.getViewport({ scale: scale, });
+                    //
+                    // Prepare canvas using PDF page dimensions
+                    //
+                    var canvas = document.getElementById('the-canvas');
+                    var context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+                    //
+                    // Render PDF page into canvas context
+                    //
+                    var renderContext = {
+                        canvasContext: context,
+                        viewport: viewport,
+                    };
+                    page.render(renderContext);
+                });
             });
-        });
+        }
     </script>
+    <a href="" onclick="loadPDF('/documentos/mascarillas.pdf')">Guía de selección de Mascarillas</a>
 </body>
 
 </html>
