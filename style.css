@@ -1,4 +1,10 @@
 body{
-    background-color: burlywood;
-    background-image: radial-gradient(blue,red, yellow);
+    background-color: #003D5D;
+    line
+    /* background-image: url("");
+    background-repeat: no-repeat;
+    background-position: right top; */
+}
+canvas{
+
 }
