@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculadora mecanizado</title>
+    </head>
+    <script>
+        function cargarFormula(){
+            var x = document.getElementById('elegir_formula');
+            switch (x.value) {
+                case "1":
+                    document.getElementById('revoluciones').style.display='block';
+                    document.getElementById("Velocidad de corte").style.display='none';
+                    break;
+                case "2":
+                    document.getElementById("Velocidad de corte").style.display='block';
+                    document.getElementById('revoluciones').style.display='none';
+                    break;
+                default:
+                    break;
+            }
+        }
+        function revoluciones(velc, diam, resultado){
+            var vel = document.getElementById(velc).value;
+            var diame = document.getElementById(diam).value;
+            document.getElementById(resultado).innerText=vel*1000/(Math.PI*diame);
+        }
+    </script>
+    <body>
+            <select name="Fórmulas" id="elegir_formula">
+                <option value=1>Revoluciones</option>
+                <option value=2>Velocidad de corte</option>
+                <optgroup label="Fresadora">
+                    <option value=3>Avance por minuto</option>
+                </optgroup>
+            </select>
+            <button onclick="cargarFormula()">cargar formula</button>
+            <div id="revoluciones" style="display:none">
+                N = 
+                <input type="text" id="vc" placeholder="Velocidad de corte"> x 1000 <br>
+               ---------------------<br>
+                <input tpye="text" id="diam" placeholder="Diametro"> x PI <br>
+                <button onclick="revoluciones('vc','diam','resultado')">calcular</button>
+                <output type="text" id="resultado"placeholder="Resultado"></output>
+            </div>
+            <div id="Velocidad de corte">
+
+            </div>
+            <div id="Avance por minuto">
+
+            </div>
+    </body>
+</html>
