@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" href="style.css">
     <head>
         <title>Calculadora mecanizado</title>
     </head>
@@ -52,7 +53,7 @@
                 </optgroup>
             </select>
             <button onclick="cargarFormula()">cargar formula</button>
-            <div id="revoluciones" style="display:none">
+            <div id="revoluciones" style="display:none; background-color: white">
                 N = 
                 <input type="text" id="vc" placeholder="Velocidad de corte"> x 1000 <br>
                ---------------------<br>
@@ -60,7 +61,7 @@
                 <button onclick="revoluciones('vc','diam','resultado')">calcular</button>
                 <output type="text" id="resultado" ></output>
             </div>
-            <div id="Velocidad de corte" style="display:none">
+            <div id="Velocidad de corte" style="display:none; background-color: white">
                     Vc = 
                     <input type="text" id="nrev" placeholder="Revoluciones"> x PI x
                     <input tpye="text" id="diam_2" placeholder="Diametro"><br>
@@ -68,7 +69,7 @@
                     <button onclick="velocidadCorte('nrev','diam_2','resultado_2')">calcular</button>
                     <output type="text" id="resultado_2"></output>
             </div>
-            <div id="Avance por minuto" style="display:none">
+            <div id="Avance por minuto" style="display:none; background-color: white">
                     Amin =  
                     <input type="text" id="az" placeholder="Avance por diente"> x 
                     <input tpye="text" id="z" placeholder="Numero de dientes"> x 
