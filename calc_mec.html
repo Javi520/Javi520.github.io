@@ -10,10 +10,17 @@
                 case "1":
                     document.getElementById('revoluciones').style.display='block';
                     document.getElementById("Velocidad de corte").style.display='none';
+                    document.getElementById('Avance por minuto').style.display='none';
                     break;
                 case "2":
                     document.getElementById("Velocidad de corte").style.display='block';
                     document.getElementById('revoluciones').style.display='none';
+                    document.getElementById('Avance por minuto').style.display='none';
+                    break;
+                case "3":
+                    document.getElementById("Velocidad de corte").style.display='none';
+                    document.getElementById("revoluciones").style.display='none';
+                    document.getElementById('Avance por minuto').style.display='block';
                     break;
                 default:
                     break;
@@ -24,29 +31,50 @@
             var diame = document.getElementById(diam).value;
             document.getElementById(resultado).innerText=vel*1000/(Math.PI*diame);
         }
+        function velocidadCorte(n, diam, resultado){
+            var nr = document.getElementById(n).value;
+            var diame = document.getElementById(diam).value;
+            document.getElementById(resultado).innerText=(nr*Math.PI*diame)/1000;
+        }
+        function avanceMinuto(n, dientes, avance_diente, resultado){
+            var nr = document.getElementById(n).value;
+            var z = document.getElementById(dientes).value;
+            var az = document.getElementById(avance_diente).value;
+            document.getElementById(resultado).innerText=nr*z*az;
+        }
     </script>
     <body>
-            <select name="Fórmulas" id="elegir_formula">
+            <select name="Fórmulas" id="elegir_formula" onchange="cargarFormula()  ">
                 <option value=1>Revoluciones</option>
                 <option value=2>Velocidad de corte</option>
                 <optgroup label="Fresadora">
                     <option value=3>Avance por minuto</option>
                 </optgroup>
             </select>
-            <button onclick="cargarFormula()">cargar formula</button>
+            <!--><button onclick="cargarFormula()">cargar formula</button></-->
             <div id="revoluciones" style="display:none">
                 N = 
                 <input type="text" id="vc" placeholder="Velocidad de corte"> x 1000 <br>
                ---------------------<br>
                 <input tpye="text" id="diam" placeholder="Diametro"> x PI <br>
                 <button onclick="revoluciones('vc','diam','resultado')">calcular</button>
-                <output type="text" id="resultado"placeholder="Resultado"></output>
+                <output type="text" id="resultado" ></output>
             </div>
-            <div id="Velocidad de corte">
-
+            <div id="Velocidad de corte" style="display:none">
+                    Vc = 
+                    <input type="text" id="nrev" placeholder="Revoluciones"> x PI x
+                    <input tpye="text" id="diam_2" placeholder="Diametro"><br>
+                    ---------------------<br> 100
+                    <button onclick="velocidadCorte('nrev','diam_2','resultado_2')">calcular</button>
+                    <output type="text" id="resultado_2"></output>
             </div>
-            <div id="Avance por minuto">
-
+            <div id="Avance por minuto" style="display:none">
+                    Amin =  
+                    <input type="text" id="az" placeholder="Avance por diente"> x 
+                    <input tpye="text" id="z" placeholder="Numero de dientes"> x 
+                    <input tpye="text" id="nrev_2" placeholder="Numero de revoluciones"><br>
+                    <button onclick="avanceMinuto('nrev_2','z','az','resultado_3')">calcular</button>
+                    <output type="text" id="resultado_3"></output>
             </div>
     </body>
 </html>
