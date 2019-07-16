@@ -1,4 +1,4 @@
-body{
+.body_calc{
     background: rgb(0,61,93);
     background: -moz-radial-gradient(circle, rgba(0,61,93,1) 68%, rgba(0,61,77,1) 100%);
     background: -webkit-radial-gradient(circle, rgba(0,61,93,1) 68%, rgba(0,61,77,1) 100%);
@@ -16,9 +16,6 @@ div.sticky {
 canvas{
     border-radius: 2px;
     border-color: white;
-}
-#indexbody{
-background-color: white
 }
 html,body {
     padding: 0;
