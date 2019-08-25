@@ -10,5 +10,5 @@ window.onload=function fun_idade ()
 }
 window.onload = function menu_display()
 {
-    document.getElementById("menu").insertAdjacentHTML("beforebegin","<a href=""/"">Inicio</a>");
+    document.getElementById("menu").innerHTML("<a href=""/"">Inicio</a>");
 }
