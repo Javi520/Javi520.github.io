@@ -6,7 +6,7 @@
     background: radial-gradient(circle, rgba(0,61,93,1) 68%, rgba(0,61,77,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#003d5d",endColorstr="#003d4d",GradientType=1);
 }
-help_button
+#help_button
 {
     border-radius: 100px;
     height: 75px;
@@ -14,7 +14,7 @@ help_button
     background-color: tomato;
     color: white;
 }
-help_button:hover
+#help_button:hover
 {
     background-color: rgb(136, 51, 51);
     color: whitesmoke;
