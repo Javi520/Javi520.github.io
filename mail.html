@@ -1,5 +1,5 @@
 <html>
-        <script src="https://smtpjs.com/v2/smtp.js"></script>
+        <script src="./scripts.js"></script>
     <body>
 <button onclick="aVer()"; return false">Probar suerte</button>
 <script>
@@ -7,7 +7,7 @@ function aVer()
 {
     if (Math.random()>.5)
     {
-        Email.send("bedehiyen@ezmail.top","nashaun.kmauri@thtt.us","Hola","Hablas tu")
+        sendMail();
         alert("Ya te hablo yo");
     }
     else
