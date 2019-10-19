@@ -13,11 +13,22 @@ window.onload = function menu_display()
     document.getElementById("menu").innerHTML='<a href="/">Inicio</a>';
 }
 
+function aVer()
+{
+    if (Math.random()>.5)
+    {
+        sendMail();
+        alert("Ya te hablo yo");
+    }
+    else
+        alert("Hablame por instagram, te toco a ti");
+}
+
 function sendMail() {
-    var link = "mailto:me@example.com"
-             + "?cc=myCCaddress@example.com"
+    var link = "mailto:nashaun.kmauri@thtt.us"
+             + "?cc=bedehiyen@ezmail.top"
              + "&subject=" + escape("This is my subject")
-             + "&body=" + escape(document.getElementById('myText').value)
+             + "&body=" + "tienes que hablar tu"
     ;
 
     window.location.href = link;
