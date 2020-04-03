@@ -1,0 +1,23 @@
+local tArgs = { ... }
+if #tArgs ~= 2 then
+  print("Ask Javi how to use it")
+  return
+end
+turtle.refuel()
+for i = 0, toNumbers(tArgs[1])/2 do
+  turtle.dig()
+  turtle.forward()
+  turtle.turnLeft()
+  for j = 1, toNumbers(tArgs[2]) do
+    turtle.dig()
+    turtle.forward()
+  end
+  turtle.turnRight()
+  turtle.dig()
+  turtle.forward()
+  for j = 1, toNumbers(tArgs[2]) do
+    turtle.dig()
+    turtle.forward()
+  end
+  turtle.turnLeft()
+end
