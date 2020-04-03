@@ -15,6 +15,7 @@ for i = 0, tonumber(tArgs[1])/2 do
   turtle.turnRight()
   turtle.dig()
   turtle.forward()
+  turtle.turnRight()
   for j = 1, tonumber(tArgs[2]) do
     turtle.dig()
     turtle.forward()
