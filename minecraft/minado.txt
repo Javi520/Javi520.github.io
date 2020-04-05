@@ -1,4 +1,5 @@
 local tArgs = { ... }
+
 if #tArgs=2 then
   print ("Minado NxN con vaciado c/X")
   radioOriginal = tonumber(tArgs[1])
@@ -11,6 +12,7 @@ else
   print ("Minado 5x5, vaciado c/1")
   radioOriginal = 5
   nivelesVaciar = 1
+end
 
 profundidad = 0
 contadorNiveles = 0
