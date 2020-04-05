@@ -22,7 +22,7 @@ end
 function MinarConFiltro()
     local success, data = turtle.inspect() --si no hay bloque es más rápido no minar
     if success then
-        if NumIdBlock(data.name) ~= nil
+        if NumIdBlock(data.name) ~= nil then
           turtle.dig()
         else
           turtle.dig("left")--debe ser un hacha para no conseguir objeto
