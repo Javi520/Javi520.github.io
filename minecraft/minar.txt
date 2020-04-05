@@ -72,8 +72,6 @@ for i = 1, tonumber(tArgs[1]) do
         -- direction <-
         turtle.turnLeft()
     else
-        MinarConFiltro()
-        turtle.forward()
         -- direction ->
         turtle.turnRight()
     end
@@ -86,8 +84,6 @@ for i = 1, tonumber(tArgs[1]) do
         turtle.turnRight()
     else
         -- direction <-
-        turtle.turnLeft()
-        MinarConFiltro()
         turtle.forward()
     end
     turno = not turno
