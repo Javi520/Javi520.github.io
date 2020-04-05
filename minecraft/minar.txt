@@ -20,7 +20,7 @@ function NumIdBlock(strID)
 end
 
 function MinarConFiltro()
-    local success, data = turtle.inspect()) --si no hay bloque es más rápido no minar
+    local success, data = turtle.inspect() --si no hay bloque es más rápido no minar
     if success then
         if NumIdBlock(data.name) ~= nil
           turtle.dig()
