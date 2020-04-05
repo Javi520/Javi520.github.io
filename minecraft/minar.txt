@@ -1,4 +1,5 @@
 local tArgs = { ... }
+local turno = false
 filtro = {}
 filtro["minecraft:cobblestone"] = 0
 filtro["minecraft:sanstone"] = 1
@@ -10,22 +11,32 @@ filtro["explorercraft:basalt"] = 6
 filtro["minecraft:dirt"] = 7
 
 if #tArgs ~= 2 then
-  print("Ask Javi how to use it")
-  return
+    print("Program <rows> <cows>")
+    return
 end
 
 --Si no está en el filtro devuelve nil
 function NumIdBlock(strID)
-  return filtro[strID]
+    return filtro[strID]
 end
 
-function MinarConFiltro()
+function MinarConFiltro(direction)
     local success, data = turtle.inspect() --si no hay bloque es más rápido no minar
     if success then
         if NumIdBlock(data.name) ~= nil then
-          turtle.dig()
+            if(direction) then
+                turtle.digDown()
+            else
+                turtle.dig()
+            end
         else
-          turtle.dig("left")--debe ser un hacha para no conseguir objeto
+            if(direction) then
+                --debe ser un hacha para no conseguir objeto
+                turtle.digDown("right")
+            else
+                --debe ser un hacha para no conseguir objeto
+                turtle.dig("right")
+            end
         end
     end
 end
@@ -40,21 +51,28 @@ function Combustible()
 end
 
 Combustible()
-for i = 0, tonumber(tArgs[1])/2 do
-  MinarConFiltro()
-  turtle.forward()
-  turtle.turnLeft()
-  for j = 0, tonumber(tArgs[2]) do
-    MinarConFiltro()
-    turtle.forward()
-  end
-  turtle.turnRight()
-  MinarConFiltro()
-  turtle.forward()
-  turtle.turnRight()
-  for j = 1, tonumber(tArgs[2]) do
-    MinarConFiltro()
-    turtle.forward()
-  end
-  turtle.turnLeft()
+--Bucle "Eje Y"
+    --Bucle "Eje X"
+MinarConFiltro(true)
+MinarConFiltro(false)
+for i = 1, tonumber(tArgs[1]) do
+    if turno then
+        -- direction <-
+        turtle.turnLeft()
+    else
+        -- direction ->
+        turtle.turnRight()
+    end
+    for j = 1, tonumber(tArgs[2]) do
+        MinarConFiltro(false)
+        turtle.forward()
+    end
+    if turno then
+        -- direction ->
+        turtle.turnRight()
+    else
+        -- direction <-
+        turtle.turnLeft()
+    end
+    turno = not turno
 end
