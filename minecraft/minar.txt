@@ -1,23 +1,58 @@
 local tArgs = { ... }
+filtro = {}
+filtro["minecraft:cobblestone"] = 0
+filtro["minecraft:sanstone"] = 1
+filtro["explorercraft:marble"] = 2
+filtro["minecraft:gravel"] = 3
+filtro["minecraft:sand"] = 4
+filtro["minecraft:stone"] = 5
+filtro["explorercraft:basalt"] = 6
+filtro["minecraft:dirt"] = 7
+
 if #tArgs ~= 2 then
   print("Ask Javi how to use it")
   return
 end
-turtle.refuel()
+
+--Si no está en el filtro devuelve nil
+function NumIdBlock(strID)
+  return filtro[strID]
+end
+
+function MinarConFiltro()
+  if (local success, data = turtle.inspect()) = true,_ then --si no hay bloque es más rápido no minar
+    if NumIdBlock(data.name) ~= nil
+      turtle.dig()
+    else
+      turtle.dig("left")--debe ser un hacha para no conseguir objeto
+    end
+  end
+end
+
+--BuscaCombustible y lo usa
+function Combustible()
+    for i=1,16 do
+        turtle.select(i)
+        turtle.refuel()
+    end
+    turtle.select(1)
+end
+
+Combustible()
 for i = 0, tonumber(tArgs[1])/2 do
-  turtle.dig()
+  MinarConFiltro()
   turtle.forward()
   turtle.turnLeft()
   for j = 1, tonumber(tArgs[2]) do
-    turtle.dig()
+    MinarConFiltro()
     turtle.forward()
   end
   turtle.turnRight()
-  turtle.dig()
+  MinarConFiltro()
   turtle.forward()
   turtle.turnRight()
   for j = 1, tonumber(tArgs[2]) do
-    turtle.dig()
+    MinarConFiltro()
     turtle.forward()
   end
   turtle.turnLeft()
