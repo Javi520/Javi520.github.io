@@ -20,13 +20,14 @@ function NumIdBlock(strID)
 end
 
 function MinarConFiltro()
-  if (local success, data = turtle.inspect()) = true,_ then --si no hay bloque es más rápido no minar
-    if NumIdBlock(data.name) ~= nil
-      turtle.dig()
-    else
-      turtle.dig("left")--debe ser un hacha para no conseguir objeto
+    local success, data = turtle.inspect()) --si no hay bloque es más rápido no minar
+    if success then
+        if NumIdBlock(data.name) ~= nil
+          turtle.dig()
+        else
+          turtle.dig("left")--debe ser un hacha para no conseguir objeto
+        end
     end
-  end
 end
 
 --BuscaCombustible y lo usa
