@@ -84,7 +84,7 @@ for i = 1, tonumber(tArgs[1]) do
         turtle.turnRight()
     else
         -- direction <-
-        turtle.forward()
+        turtle.turnLeft()
     end
     turno = not turno
 end
