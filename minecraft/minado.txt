@@ -25,9 +25,6 @@ else
     return
 end
 
-radioOriginal = 5
-
-
 profundidad = 0
 contadorNiveles = 0
 vueltas = 3
