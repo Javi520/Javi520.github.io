@@ -1,18 +1,32 @@
-local tArgs = { ... }
+nivelesVaciar = 3
 
-if #tArgs=2 then
-  print ("Minado NxN con vaciado c/X")
-  radioOriginal = tonumber(tArgs[1])
-  nivelesVaciar = tonumber(tArgs[2])
-elseif #tArgs=1 then
-  print ("Minado NxN, con vaciado c/1")
-  radioOriginal = tonumber(tArgs[1])
-  nivelesVaciar = 1
+local arg = { ... }
+if (tonumber(arg[1])) then
+    argumento = tonumber(arg[1])
 else
-  print ("Minado 5x5, vaciado c/1")
-  radioOriginal = 5
-  nivelesVaciar = 1
+    print("Introduce un numero")
+    return
 end
+
+if argumento then
+    if (argumento < 0) then
+        print("Introduce un numero positivo e impar")
+        return
+    else
+        if (argumento % 2 == 1) then
+            radioOriginal = argumento
+        else
+            print("Introduce un numero impar")
+            return
+        end
+    end
+else
+    print("Introduce un radio - Tiene que ser un numero impar")
+    return
+end
+
+radioOriginal = 5
+
 
 profundidad = 0
 contadorNiveles = 0
