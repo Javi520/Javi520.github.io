@@ -1,5 +1,6 @@
 local tArgs = { ... }
 local turno = false
+local first = true
 filtro = {}
 filtro["minecraft:cobblestone"] = 0
 filtro["minecraft:sanstone"] = 1
@@ -20,27 +21,31 @@ function NumIdBlock(strID)
     return filtro[strID]
 end
 
-function MinarConFiltro(direction)
+function MinarConFiltro()
     local success, data = turtle.inspect() --si no hay bloque es más rápido no minar
     if success then
         if NumIdBlock(data.name) ~= nil then
             print(data.name)
-            if(direction) then
-                turtle.digDown()
-            else
-                turtle.dig()
-            end
+            turtle.dig()
         else
-            if(direction) then
-                --debe ser un hacha para no conseguir objeto
-                turtle.digDown("right")
-            else
-                --debe ser un hacha para no conseguir objeto
-                turtle.dig("right")
-            end
+            --debe ser un hacha para no conseguir objeto
+            turtle.dig("right")
         end
     end
 end
+
+function MinarConFiltroDown()
+    local success, data = turtle.inspectDown() --si no hay bloque es más rápido no minar
+    if success then
+        if NumIdBlock(data.name) ~= nil then
+            print(data.name)
+        else
+            --debe ser un hacha para no conseguir objeto
+            turtle.digDown("right")
+        end
+    end
+end
+
 
 --BuscaCombustible y lo usa
 function Combustible()
@@ -54,20 +59,26 @@ end
 Combustible()
 --Bucle "Eje Y"
     --Bucle "Eje X"
-MinarConFiltro(true)
+MinarConFiltroDown()
 turtle.down()
 for i = 1, tonumber(tArgs[1]) do
-    if turno then
-        MinarConFiltro(false)
+    if not first then
+        MinarConFiltro()
         turtle.forward()
+    else
+        first = false
+    end
+    if turno then
         -- direction <-
         turtle.turnLeft()
     else
+        MinarConFiltro()
+        turtle.forward()
         -- direction ->
         turtle.turnRight()
     end
     for j = 1, tonumber(tArgs[2]) do
-        MinarConFiltro(false)
+        MinarConFiltro()
         turtle.forward()
     end
     if turno then
@@ -76,8 +87,11 @@ for i = 1, tonumber(tArgs[1]) do
     else
         -- direction <-
         turtle.turnLeft()
-        MinarConFiltro(false)
+        MinarConFiltro()
         turtle.forward()
     end
     turno = not turno
 end
+--para el siguiente nivel
+turno = false
+first = true
