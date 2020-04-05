@@ -54,9 +54,11 @@ Combustible()
 --Bucle "Eje Y"
     --Bucle "Eje X"
 MinarConFiltro(true)
-MinarConFiltro(false)
+turtle.down()
 for i = 1, tonumber(tArgs[1]) do
     if turno then
+        MinarConFiltro(false)
+        turtle.forward()
         -- direction <-
         turtle.turnLeft()
     else
@@ -73,6 +75,8 @@ for i = 1, tonumber(tArgs[1]) do
     else
         -- direction <-
         turtle.turnLeft()
+        MinarConFiltro(false)
+        turtle.forward()
     end
     turno = not turno
 end
