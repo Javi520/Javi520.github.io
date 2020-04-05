@@ -30,6 +30,7 @@ function MinarConFiltro()
             turtle.dig()
         else
             --debe ser un hacha para no conseguir objeto
+            print("no quiero el bloque")
             turtle.dig("right")
         end
     end
@@ -42,6 +43,7 @@ function MinarConFiltroDown()
             print(data.name)
         else
             --debe ser un hacha para no conseguir objeto
+            print("no quiero el bloque")
             turtle.digDown("right")
         end
     end
