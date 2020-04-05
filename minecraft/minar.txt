@@ -44,7 +44,7 @@ for i = 0, tonumber(tArgs[1])/2 do
   MinarConFiltro()
   turtle.forward()
   turtle.turnLeft()
-  for j = 1, tonumber(tArgs[2]) do
+  for j = 0, tonumber(tArgs[2]) do
     MinarConFiltro()
     turtle.forward()
   end
