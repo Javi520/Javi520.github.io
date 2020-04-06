@@ -41,7 +41,7 @@ local function get( sUrl )
 end
 
 -- Determine file to download
-local sUrl = "http://JCool.me/minecraft/" .. tArgs[1] .. ".txt"
+local sUrl = "http://JCool.me/minecraft/" .. tArgs[1] .. ".lua"
 local sFile = tArgs[2]
 local sPath = shell.resolve( sFile )
 if fs.exists( sPath ) then
