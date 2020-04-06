@@ -3,7 +3,7 @@ local turno = false
 local first = true
 filtro = {}
 filtro["minecraft:cobblestone"] = 0
-filtro["minecraft:sanstone"] = 1
+filtro["minecraft:sandstone"] = 1
 filtro["explorercraft:marble"] = 2
 filtro["minecraft:gravel"] = 3
 filtro["minecraft:sand"] = 4
@@ -26,12 +26,11 @@ function MinarConFiltro()
     local success, data = turtle.inspect() --si no hay bloque es más rápido no minar
     if success then
         if NumIdBlock(data.name) ~= nil then
-            print(data.name)
-            turtle.dig()
-        else
             --debe ser un hacha para no conseguir objeto
             print("no quiero el bloque")
             turtle.attack("right")
+        else
+            turtle.dig()
         end
     end
 end
@@ -40,11 +39,12 @@ function MinarConFiltroDown()
     local success, data = turtle.inspectDown() --si no hay bloque es más rápido no minar
     if success then
         if NumIdBlock(data.name) ~= nil then
-            print(data.name)
-        else
             --debe ser un hacha para no conseguir objeto
             print("no quiero el bloque")
             turtle.attackDown("right")
+        else
+            print(data.name)
+            turtle.digDown()
         end
     end
 end
