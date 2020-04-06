@@ -19,7 +19,7 @@ end
 --Si no está en el filtro devuelve nil
 function NumIdBlock(strID)
     print (filtro[strID])
-    return = filtro[strID]
+    return filtro[strID]
 end
 
 function MinarConFiltro()
