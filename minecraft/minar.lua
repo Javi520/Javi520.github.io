@@ -28,7 +28,7 @@ function MinarConFiltro()
         if NumIdBlock(data.name) ~= nil then
             --debe ser un hacha para no conseguir objeto
             print("no quiero el bloque")
-            turtle.attack("right")
+            turtle.dig("right")
         else
             turtle.dig()
         end
@@ -41,7 +41,7 @@ function MinarConFiltroDown()
         if NumIdBlock(data.name) ~= nil then
             --debe ser un hacha para no conseguir objeto
             print("no quiero el bloque")
-            turtle.attackDown("right")
+            turtle.digDown("right")
         else
             print(data.name)
             turtle.digDown()
