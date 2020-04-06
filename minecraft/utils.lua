@@ -1,11 +1,17 @@
 --Esto es una API
 
+bloques = {}
+bloques["minecraft:cobblestone"] = 0
+bloques["minecraft:sandstone"] = 1
+bloques["explorercraft:marble"] = 2
+bloques["minecraft:gravel"] = 3
+bloques["minecraft:sand"] = 4
+bloques["minecraft:stone"] = 5
+bloques["explorercraft:basalt"] = 6
+bloques["minecraft:dirt"] = 7
+bloques["minecraft:"] = 8
 
-cobblestone,s_cobblestone = 0, "minecraft:cobblestone"
-sandstone,s_sandstone = 1, "minecraft:sandstone"
-marble,s_marble = 2, "explorercraft:marble"
-gravel,s_gravel = 3, "minecraft:gravel"
-sand,s_sand = 4, "minecraft:sand"
-stone,s_stone = 5, "minecraft:stone"
-basalt,s_basalt = 6, "explorercraft:basalt"
-dirt,s_dirt = 7, "minecraft:dirt"
+--Si no está en el filtro devuelve nil
+function NumIdBlock(strID)
+    return filtro[strID]
+end
