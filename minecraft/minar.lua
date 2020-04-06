@@ -11,9 +11,20 @@ filtro["minecraft:stone"] = 5
 filtro["explorercraft:basalt"] = 6
 filtro["minecraft:dirt"] = 7
 
-if #tArgs ~= 2 then
-    print("Program <rows> <cows>")
-    return
+--comprobación de argumentos
+if true then
+    if #tArgs ~= 2 then
+        print("Program <rows> <cows>")
+        return
+    end
+
+    rows = tonumber(tArgs[1])
+    cows = tonumber(tArgs[2])
+    
+    if cows < rows then
+        print ("Please its faster if we reverse the order, try again :)")
+        return
+    end
 end
 
 --Si no está en el filtro devuelve nil
