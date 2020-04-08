@@ -3,6 +3,7 @@ local tArgs = { ... }
 local rows
 local cows
 local filtro = {}
+local change
 
 --ultima altura a la que estuvo la tortuga
 local last_level = 0
@@ -77,7 +78,6 @@ print("OK")
 if(right_first) then
     turtle.turnRight()
 end
-local change
 for i=1,top-1 do
     utils.nForward(sub,utils.MinarConFiltro,filtro)
     turn_strategie_1(utils.MinarConFiltro,filtro)
