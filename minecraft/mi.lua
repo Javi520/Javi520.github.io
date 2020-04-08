@@ -12,7 +12,8 @@ os.loadAPI("utils")
 
 local function swap( a, b )
     local temp = a
-    a,b = b,temp
+    a = b
+    b = temp
 end
 
 --lista de bloques que me interesa tener apuntados
