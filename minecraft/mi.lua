@@ -77,8 +77,11 @@ print("OK")
 if(right_first) then
     turtle.turnRight()
 end
+local change
 for i=1,top do
     utils.nForward(sub,utils.MinarConFiltro,filtro)
     turn_strategie_1(utils.MinarConFiltro,filtro)
-    swap(turn_strategie_1,turn_strategie_2)
+    change = turn_strategie_1
+    turn_strategie_1 = turn_strategie 2
+    turn_strategie_2 = change
 end
