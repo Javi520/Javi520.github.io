@@ -30,8 +30,8 @@ if true then
         print("Program <rows> <cows>")
         return
     end
-    rows = tonumber(tArgs[1])
-    cows = tonumber(tArgs[2])
+    rows = tonumber(tArgs[1])-1
+    cows = tonumber(tArgs[2])-1
 end
 
 --Main
