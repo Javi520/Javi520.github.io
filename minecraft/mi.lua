@@ -36,7 +36,8 @@ end
 
 --Main
 textutils.slowPrint("Creating block filter...")
-local filtro = utils.createFilter(blocklist)
+local filtro = {}
+filtro = utils.createFilter(blocklist)
 for i,v in ipairs(filtro) do
     print(v)
 end
