@@ -61,13 +61,13 @@ end
 textutils.slowPrint("OK")
 print("Start...")
 textutils.slowPrint("Mining down...")
-utils.nDown(1,utils.MinarConFiltroDown,blocklist)
+utils.nDown(1,utils.MinarConFiltroDown,filtro)
 last_level=last_level+1
 textutils.slowPrint("OK")
 if(right_first) then
     turtle.turnRight()
 end
 for i=1,top do
-    utils.nForward(cows,utils.MinarConFiltro,blocklist)
-    turn_strategie(utils.MinarConFiltro,blocklist)
+    utils.nForward(cows,utils.MinarConFiltro,filtro)
+    turn_strategie(utils.MinarConFiltro,filtro)
 end
