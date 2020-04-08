@@ -56,7 +56,7 @@ end
 --avanza y gira otros 90º horarios
 function clock_rot_forward( toDoEachStep , argu)
     turtle.turnRight()
-    toDoEachStep()
+    toDoEachStep(argu)
     turtle.forward()
     turtle.turnRight()
 end
