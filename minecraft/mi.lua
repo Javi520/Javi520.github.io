@@ -10,6 +10,11 @@ local last_level = 0
 --aqui tengo funciones utiles comunes
 os.loadAPI("utils")
 
+local function swap( a, b )
+    local temp = a
+    a,b = b,temp
+end
+
 --lista de bloques que me interesa tener apuntados
 local blocklist = {
     utils.cobblestone,
@@ -50,10 +55,12 @@ print("Choosing Mining style, right or front?")
 local right_first = true
 local top = rows 
 local sub = cows
-turn_strategie = utils.cclock_rot_forward
+local turn_strategie_1 = utils.cclock_rot_forward
+local turn_strategie_2 = utils.clock_rot_forward
 if rows>cows then
     right_first = false
-    turn_strategie = utils.clock_rot_forward
+    turn_strategie_2 = utils.cclock_rot_forward
+    turn_strategie_1 = utils.clock_rot_forward
     top,sub = cows,rows
     print(" first right")
 else
@@ -71,5 +78,6 @@ if(right_first) then
 end
 for i=1,top do
     utils.nForward(sub,utils.MinarConFiltro,filtro)
-    turn_strategie(utils.MinarConFiltro,filtro)
+    turn_strategie_1(utils.MinarConFiltro,filtro)
+    swap(turn_strategie_1,turn_strategie_2)
 end
