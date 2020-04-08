@@ -54,7 +54,7 @@ end
 --gira la tortuga 90º horarios
 --llama a <toDoEachStep>
 --avanza y gira otros 90º horarios
-function clock_rot_forward( radio, toDoEachStep , argu)
+function clock_rot_forward( toDoEachStep , argu)
     turtle.turnRight()
     toDoEachStep()
     turtle.forward()
@@ -64,7 +64,7 @@ end
 --gira la tortuga 90º anti-horarios
 --llama a <toDoEachStep>
 --avanza y gira otros 90º anti-horarios
-function cclock_rot_forward( radio, toDoEachStep , argu)
+function cclock_rot_forward( toDoEachStep , argu)
     turtle.turnLeft()
     toDoEachStep(argu)
     turtle.forward()

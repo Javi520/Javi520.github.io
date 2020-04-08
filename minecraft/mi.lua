@@ -22,8 +22,6 @@ local blocklist = {
     utils.hierro
 }
 
-local filtro = utils.createFilter(blocklist)
-
 --comprobación de argumentos
 if true then
     if #tArgs ~= 2 then
@@ -36,11 +34,14 @@ if true then
 end
 
 --Main
-print("Checking fuel for at least 1 level...")
+textutils.slowPrint("Creating block filter...")
+local filtro = utils.createFilter(blocklist)
+print("OK")
+textutils.slowprint("Checking fuel for at least 1 level...")
 --toDo
-print("Enough slots for at least 1 level?")
+textutils.slowprint("Enough slots for at least 1 level?")
 --toDo
-print("Choosing Mining style, right or front?")
+textutils.slowprint("Choosing Mining style, right or front?")
 local right_first = false
 local top = rows 
 local sub = cows
@@ -59,3 +60,10 @@ textutils.slowPrint("Mining down...")
 utils.nDown(1,utils.MinarConFiltroDown,blocklist)
 last_level++
 textutils.slowPrint("OK")
+if(right_first) then
+    turtle.turnRight()
+end
+for i=1,top do
+    utils.nForward(cows,utils.MinarConFiltro,blocklist)
+    turn_strategie(utils.MinarConFiltro,blocklist)
+end
