@@ -1,5 +1,7 @@
 --argumentos del programa
 local tArgs = { ... }
+local rows
+local cows
 
 --ultima altura a la que estuvo la tortuga
 local last_level = 0
@@ -28,9 +30,8 @@ if true then
         print("Program <rows> <cows>")
         return
     end
-
-    local rows = tonumber(tArgs[1])
-    local cows = tonumber(tArgs[2])
+    rows = tonumber(tArgs[1])
+    cows = tonumber(tArgs[2])
 end
 
 --Main
