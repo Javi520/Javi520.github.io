@@ -37,20 +37,23 @@ end
 --Main
 textutils.slowPrint("Creating block filter...")
 local filtro = utils.createFilter(blocklist)
+for i,v in ipairs(filtro) do
+    print(v)
+end
 print("OK")
 textutils.slowPrint("Checking fuel for at least 1 level...")
 --toDo
 textutils.slowPrint("Enough slots for at least 1 level?")
 --toDo
 textutils.slowPrint("Choosing Mining style, right or front?")
-local right_first = false
-local top = rows 
-local sub = cows
+local right_first = true
+local top = cows 
+local sub = rows
 turn_strategie = utils.cclock_rot_forward
-if cows<rows then
-    right_first = true
+if rows>cows then
+    right_first = false
     turn_strategie = utils.clock_rot_forward
-    top,sub = cows,rows
+    top,sub = rows,cows
     print(" first right")
 else
     print(" front right")
