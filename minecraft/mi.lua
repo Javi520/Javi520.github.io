@@ -11,12 +11,6 @@ local last_level = 0
 --aqui tengo funciones utiles comunes
 os.loadAPI("utils")
 
-local function swap( a, b )
-    local temp = a
-    a = b
-    b = temp
-end
-
 --lista de bloques que me interesa tener apuntados
 local blocklist = {
     utils.cobblestone,
