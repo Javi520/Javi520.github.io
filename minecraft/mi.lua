@@ -78,10 +78,12 @@ if(right_first) then
     turtle.turnRight()
 end
 local change
-for i=1,top do
+for i=1,top-1 do
     utils.nForward(sub,utils.MinarConFiltro,filtro)
     turn_strategie_1(utils.MinarConFiltro,filtro)
     change = turn_strategie_1
     turn_strategie_1 = turn_strategie_2
     turn_strategie_2 = change
 end
+--last iteration, doing this, no last turn
+utils.nForward(sub,utils.MinarConFiltro,filtro)
