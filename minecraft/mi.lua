@@ -31,44 +31,45 @@ if true then
         print("Program <rows> <cows>")
         return
     end
-    rows = tonumber(tArgs[1])-1
-    cows = tonumber(tArgs[2])-1
+    rows = tonumber(tArgs[1])
+    cows = tonumber(tArgs[2])
 end
 
 --Main
-textutils.slowPrint("Creating block filter...")
+print("Creating block filter...")
 filtro = utils.createFilter(blocklist)
 for i,v in ipairs(filtro) do
     print(v)
 end
 print("OK")
-textutils.slowPrint("Checking fuel for at least 1 level...")
+print("Checking fuel for at least 1 level...")
 --toDo
-textutils.slowPrint("Enough slots for at least 1 level?")
+print("Enough slots for at least 1 level?")
 --toDo
-textutils.slowPrint("Choosing Mining style, right or front?")
+print("Choosing Mining style, right or front?")
 local right_first = true
-local top = cows 
-local sub = rows
+local top = rows 
+local sub = cows
 turn_strategie = utils.cclock_rot_forward
 if rows>cows then
     right_first = false
     turn_strategie = utils.clock_rot_forward
-    top,sub = rows,cows
+    top,sub = cows,rows
     print(" first right")
 else
     print(" front right")
 end
-textutils.slowPrint("OK")
+print("OK")
 print("Start...")
-textutils.slowPrint("Mining down...")
+turtle.forward()
+print("Mining down...")
 utils.nDown(1,utils.MinarConFiltroDown,filtro)
 last_level=last_level+1
-textutils.slowPrint("OK")
+print("OK")
 if(right_first) then
     turtle.turnRight()
 end
 for i=1,top do
-    utils.nForward(cows,utils.MinarConFiltro,filtro)
+    utils.nForward(sub,utils.MinarConFiltro,filtro)
     turn_strategie(utils.MinarConFiltro,filtro)
 end
