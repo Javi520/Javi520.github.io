@@ -13,7 +13,7 @@ hierro = "minecraft:iron_ore"
 
 --Creo y devuelvo un filtro con una lista de bloques
 function createFilter(list)
-    filter = {}
+    local filter = {}
     for i,v in ipairs(list) do
         filter[v] = i
     end
