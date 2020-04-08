@@ -21,8 +21,8 @@ function createFilter(list)
 end
 
 --Si no está en el filtro devuelve nil
-function NumIdBlock(filter,strID)
-    return filter[strID]
+function NumIdBlock(filtrillo,strID)
+    return filtrillo[strID]
 end
 
 --Busca combustible y lo equipa todo
@@ -122,10 +122,10 @@ end
 --Si hay el elemento de delante es uno que esté en el filtro
 --la tortuga lo "trabajará" con la herramienta de la derecha
 --para no obtener el bloque
-function MinarConFiltro( filter )
+function MinarConFiltro( filtrillo )
     local success, data = turtle.inspect() --si no hay bloque es más rápido no minar
     if success then
-        if NumIdBlock(filter, data.name) ~= nil then
+        if NumIdBlock(filtrillo, data.name) ~= nil then
             --debe ser un hacha para no conseguir objeto
             print("no quiero el bloque")
             turtle.dig("right")
@@ -138,10 +138,10 @@ end
 --Si hay el elemento de abajo es uno que esté en el filtro
 --la tortuga lo "trabajará" con la herramienta de la derecha
 --para no obtener el bloque
-function MinarConFiltroDown( filter )
+function MinarConFiltroDown( filtrillo )
     local success, data = turtle.inspectDown() --si no hay bloque es más rápido no minar
     if success then
-        if NumIdBlock(filter, data.name) ~= nil then
+        if NumIdBlock(filtrillo, data.name) ~= nil then
             --debe ser un hacha para no conseguir objeto
             print("no quiero el bloque")
             turtle.digDown("right")

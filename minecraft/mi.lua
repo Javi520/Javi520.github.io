@@ -2,6 +2,7 @@
 local tArgs = { ... }
 local rows
 local cows
+local filtro = {}
 
 --ultima altura a la que estuvo la tortuga
 local last_level = 0
@@ -36,7 +37,6 @@ end
 
 --Main
 textutils.slowPrint("Creating block filter...")
-local filtro = {}
 filtro = utils.createFilter(blocklist)
 for i,v in ipairs(filtro) do
     print(v)
