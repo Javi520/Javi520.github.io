@@ -97,7 +97,7 @@ end
 function nDown( n, toDoEachStep , argu)
     for i=1,n do
         toDoEachStep(argu)
-        turtle.Down()
+        turtle.down()
     end
 end
 
@@ -107,7 +107,7 @@ end
 function nUp( n, toDoEachStep , argu)
     for i=1,n do
         toDoEachStep(argu)
-        turtle.Up()
+        turtle.up()
     end
 end
 
