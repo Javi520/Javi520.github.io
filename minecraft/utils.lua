@@ -22,7 +22,7 @@ end
 
 --Si no está en el filtro devuelve nil
 function NumIdBlock(filter,strID)
-    return filtro[strID]
+    return filter[strID]
 end
 
 --Busca combustible y lo equipa todo
