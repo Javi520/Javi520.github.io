@@ -37,11 +37,11 @@ end
 textutils.slowPrint("Creating block filter...")
 local filtro = utils.createFilter(blocklist)
 print("OK")
-textutils.slowprint("Checking fuel for at least 1 level...")
+textutils.slowPrint("Checking fuel for at least 1 level...")
 --toDo
-textutils.slowprint("Enough slots for at least 1 level?")
+textutils.slowPrint("Enough slots for at least 1 level?")
 --toDo
-textutils.slowprint("Choosing Mining style, right or front?")
+textutils.slowPrint("Choosing Mining style, right or front?")
 local right_first = false
 local top = rows 
 local sub = cows
