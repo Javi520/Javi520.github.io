@@ -1,15 +1,24 @@
 local tArgs = { ... }
 local turno = false
 local first = true
-filtro = {}
-filtro["minecraft:cobblestone"] = 0
-filtro["minecraft:sandstone"] = 1
-filtro["explorercraft:marble"] = 2
-filtro["minecraft:gravel"] = 3
-filtro["minecraft:sand"] = 4
-filtro["minecraft:stone"] = 5
-filtro["explorercraft:basalt"] = 6
-filtro["minecraft:dirt"] = 7
+
+os.loadAPI("utils")
+
+blocklist = {
+    utils.cobblestone,
+    utils.sand,
+    utils.sandstone,
+    utils.dirt,
+    utils.diamond,
+    utils.marble,
+    utils.gravel,
+    utils.stone,
+    utils.basalt,
+    utils.oro,
+    utils.hierro
+}
+
+filtro = utils.createFilter(blocklist)
 
 --comprobación de argumentos
 if true then
@@ -25,12 +34,6 @@ if true then
         print ("Please its faster if we reverse the order, try again :)")
         return
     end
-end
-
---Si no está en el filtro devuelve nil
-function NumIdBlock(strID)
-    print (filtro[strID])
-    return filtro[strID]
 end
 
 function MinarConFiltro()
