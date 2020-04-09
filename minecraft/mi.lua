@@ -67,7 +67,7 @@ print("Start...")
 turtle.forward()
 print("Mining down...")
 utils.nDown(1,utils.MinarConFiltroDown,filtro)
-last_level=last_level+1
+last_level=1
 print("OK")
 if(right_first) then
     turtle.turnRight()

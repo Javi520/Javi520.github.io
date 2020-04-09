@@ -151,3 +151,10 @@ function MinarConFiltroDown( filtrillo )
         end
     end
 end
+
+--moves the turtle in a rectangle (<w>idth, <h>eight)
+--and calls <toDoEachStep>
+--with a list of arguments <arg_list>
+function RectangleWithAction( w, h, toDoEachStep, arg_list )
+
+end
