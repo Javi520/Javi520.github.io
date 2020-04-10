@@ -154,7 +154,29 @@ end
 
 --moves the turtle in a rectangle (<w>idth, <h>eight)
 --and calls <toDoEachStep>
---with a list of arguments <arg_list>
-function RectangleWithAction( w, h, toDoEachStep, arg_list )
-
+--with a list of arguments <arg_list> of length arg_qty
+function RectangleWithAction( w, h, toDoEachStep, argu)
+    local right_first = true
+    local top = w
+    local sub = h
+    local turn_strategie_1 = cclock_rot_forward
+    local turn_strategie_2 = clock_rot_forward
+if rows>cows then
+    right_first = false
+    turn_strategie_2 = cclock_rot_forward
+    turn_strategie_1 = clock_rot_forward
+    top,sub = cows,rows
+end
+    if(right_first) then
+        turtle.turnRight()
+    end
+    for i=1,top-1 do
+        nForward(sub,toDoEachStep,argu)
+        turn_strategie_1(toDoEachStep,argu)
+        change = turn_strategie_1
+        turn_strategie_1 = turn_strategie_2
+        turn_strategie_2 = change
+    end
+    --last iteration, doing this, no last turn
+    nForward(sub,toDoEachStep,argu)
 end
