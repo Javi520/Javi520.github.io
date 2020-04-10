@@ -155,10 +155,10 @@ end
 --moves the turtle in a rectangle (<w>idth, <h>eight)
 --and calls <toDoEachStep>
 --with a list of arguments <arg_list> of length arg_qty
-function RectangleWithAction( w, h, toDoEachStep, argu)
+function RectangleWithAction( rows, cows, toDoEachStep, argu)
     local right_first = true
-    local top = w
-    local sub = h
+    local top = rows
+    local sub = cows
     local turn_strategie_1 = cclock_rot_forward
     local turn_strategie_2 = clock_rot_forward
 if rows>cows then
