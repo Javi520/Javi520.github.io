@@ -54,14 +54,14 @@ else
     end
 end
 
-local function ReturnToStart(  )
-    if(last_x = 0)then
+local function ReturnToStart()
+    if(last_x == 0)then
         turtle.turnLeft()
         utils.nForward(rows,function()end,nil)
         turtle.turnLeft()
         turtle.turnLeft()
         return
-    elseif last_y = 0 then
+    elseif last_y == 0 then
         turtle.turnRight()
         utils.nForward(cows,function()end,nil)
         turtle.turnRight()
