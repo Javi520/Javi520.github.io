@@ -40,3 +40,32 @@ html,body
     background-color: white;
     background: white;
 }
+.proyecto
+{
+    margin-bottom: 1cm;
+    margin-right: 40%;
+    margin-left: 0.5cm;
+    margin-top: 1cm;
+    border-style: 1;
+    border-radius: 2px;
+    border-color: grey;
+    background-color: lightgray;
+    padding: 0.5cm;
+}
+.invisible
+{
+    visibility: hidden;
+    display: none;
+}
+.idea
+{
+    margin-bottom: 1cm;
+    margin-right: 40%;
+    margin-left: 0.5cm;
+    margin-top: 1cm;
+    border-style: 1;
+    border-radius: 2px;
+    border-color: grey;
+    background-color: pink;
+    padding: 0.5cm;
+}
