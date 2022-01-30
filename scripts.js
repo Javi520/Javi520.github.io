@@ -25,3 +25,6 @@ function sendMail() {
 }
 
 window.onload = fun_idade;
+//window.onload = menu_display
+//It's a variable... so writing both will cause an override of the initial value
+//the correct form is by using window.addEventListener("load", function)
