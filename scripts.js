@@ -1,4 +1,4 @@
-window.onload=function fun_idade ()
+function fun_idade ()
 {
     var dt_msecs = new Date();
     if(dt_msecs.getMonth>=10){
@@ -8,7 +8,8 @@ window.onload=function fun_idade ()
     else
         document.getElementById("idade").innerHTML=(dt_msecs.getFullYear()-1996);
 }
-window.onload = function menu_display()
+
+function menu_display()
 {
     document.getElementById("menu").innerHTML='<a href="/">Inicio</a>';
 }
@@ -22,3 +23,5 @@ function sendMail() {
 
     window.location.href = link;
 }
+
+window.onload = fun_idade;
