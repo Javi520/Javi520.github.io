@@ -1,3 +1,5 @@
+const { Console } = require("console");
+
 function fun_idade ()
 {
     var dt_msecs = new Date();
@@ -14,7 +16,7 @@ function menu_display()
     document.getElementById("menu").innerHTML='<a href="/">Inicio</a>';
 }
 
-function sendMail() {
+function sendMail() {   //Paula no merecía esto
     var link = "mailto:nashaun.kmauri@thtt.us"
              + "?cc=bedehiyen@ezmail.top"
              + "&subject=" + escape("Hola Javi")
@@ -24,7 +26,23 @@ function sendMail() {
     window.location.href = link;
 }
 
-window.onload = fun_idade;
+function pistas_padlock()
+{
+    console.log("Parece que sigues siendo algo lista");
+    console.log("Qué tienes si juntas una de las primeras películas que me" + 
+                "recomendaste y ví** y las Lolas que cría mi tío?");
+    await sleep(3000);
+    console.log("PD: Es el nombre de la película y no tiene espacios. Cuidado"
+                + "con la combinación de mayúsculas que puede haber");
+}
+
+function onWindowsLoadDo()
+{
+    fun_idade();
+    pistas_padlock();
+}
+
+window.onload = onWindowsLoadDo;
 //window.onload = menu_display
 //It's a variable... so writing both will cause an override of the initial value
 //the correct form is by using window.addEventListener("load", function)

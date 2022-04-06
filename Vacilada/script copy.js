@@ -28,7 +28,7 @@ async function newChatMessage(chat_id, stringToBeWritten)
 async function primeraPista()
 {
     var audio = new Audio('beep.mp3');
-    await newChatMessage('chat', "Bienvenida R, soy AuPy9000, un Bot programado por un gran Genio, conocido como Australio Pythekus");
+    await newChatMessage('chat', "Bienvenida Raquel, soy AuPy9000, un Bot programado por un gran Genio, conocido como Australio Pythekus");
     console.log('AUS');
     await sleep(1000);
     await newChatMessage('chat', "Ahí va un refrán: \"La paciencia!, es la clave del exito\", asi de gratis... Este programador.... vaya cosas tiene, eh!");
@@ -45,7 +45,7 @@ async function primeraPista()
     await newChatMessage('chat', "JAJAJAJAJAJA, como has podido caer....");
     await sleep(2000);
     await newChatMessage('chat', "CHAO!");
-    console.log('WINS');
+    console.log('>');
     await sleep(20000);
     console.log('SRA');
     console.log('CROQUETA');
@@ -56,8 +56,3 @@ async function primeraPista()
 }
 
 console.log('Chica lista');
-
-console.log('Al resto de personas que no sean R..., si te preguntas si lo eres'+
-            ' entonces no lo eres, la contraseña del archivo no está en ' +
-            'ninguna parte, no quiero que cualquiera(vamos a ser optimistas) ' +
-            'pueda tenerlo');
