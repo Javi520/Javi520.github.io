@@ -1,5 +1,3 @@
-const { Console } = require("console");
-
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
