@@ -57,7 +57,4 @@ async function primeraPista()
 
 console.log('Chica lista');
 
-console.log('Al resto de personas que no sean R..., si te preguntas si lo eres'+
-            ' entonces no lo eres, la contraseña del archivo no está en ' +
-            'ninguna parte, no quiero que cualquiera(vamos a ser optimistas) ' +
-            'pueda tenerlo');
+console.log('Al resto de personas que no sean R..., si te preguntas si lo eres entonces no lo eres, la contraseña del archivo no está en ninguna parte, no quiero que cualquiera(vamos a ser optimistas) pueda tenerlo');

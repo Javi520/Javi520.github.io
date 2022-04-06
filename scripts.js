@@ -29,11 +29,9 @@ function sendMail() {   //Paula no merecía esto
 function pistas_padlock()
 {
     console.log("Parece que sigues siendo algo lista");
-    console.log("Qué tienes si juntas una de las primeras películas que me" + 
-                "recomendaste y ví** y las Lolas que cría mi tío?");
+    console.log("Qué tienes si juntas una de las primeras películas que merecomendaste y ví** y las Lolas que cría mi tío?");
     await sleep(3000);
-    console.log("PD: Es el nombre de la película y no tiene espacios. Cuidado"
-                + "con la combinación de mayúsculas que puede haber");
+    console.log("PD: Es el nombre de la película y no tiene espacios. Cuidado con la combinación de mayúsculas que puede haber");
 }
 
 function onWindowsLoadDo()
