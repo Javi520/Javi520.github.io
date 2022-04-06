@@ -1,5 +1,9 @@
 const { Console } = require("console");
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 function fun_idade ()
 {
     var dt_msecs = new Date();
