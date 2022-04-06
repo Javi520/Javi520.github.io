@@ -38,7 +38,7 @@ function pistas_padlock()
     console.log("PD: Es el nombre de la película y no tiene espacios. Cuidado con la combinación de mayúsculas que puede haber");
 }
 
-function onWindowsLoadDo()  // I need to do this since it does not work calling both function inside
+async function onWindowsLoadDo()  // I need to do this since it does not work calling both function inside
 {
     var dt_msecs = new Date();
     if(dt_msecs.getMonth>=10){
